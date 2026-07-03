@@ -1,0 +1,37 @@
+import random
+
+# 15 players ka pool
+players = [
+    'Rohit', 'Virat', 'Gill', 'Pant', 'Jadeja',
+    'Bumrah', 'Shami', 'Hardik', 'Rahul', 'Ashwin',
+    'Siraj', 'Iyer', 'Kuldeep', 'Yadav', 'Arshdeep'
+]
+
+print("=" * 40)
+print("   🏏 CRICKET TEAM SELECTOR 🏏")
+print("=" * 40)
+
+# Shuffle karo
+random.shuffle(players)
+
+# Playing 11 select karo
+playing_11 = players[:11]
+bench = players[11:]
+
+# Captain select karo
+captain = random.choice(playing_11)
+
+print("\n📋 PLAYING 11:")
+for i, player in enumerate(playing_11, 1):
+    if player == captain:
+        print(f"  {i}. {player} ⭐ (Captain)")
+    else:
+        print(f"  {i}. {player}")
+
+print("\n🪑 BENCH:")
+for i, player in enumerate(bench, 1):
+    print(f"  {i}. {player}")
+
+print("\n" + "=" * 40)
+print(f"  Captain: {captain} ⭐")
+print("=" * 40)
